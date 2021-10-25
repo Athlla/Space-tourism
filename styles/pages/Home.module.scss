@@ -2,7 +2,19 @@
 
 .Home {
   min-height: 100vh;
-  background: url('/assets/home/background-home-desktop.jpg') no-repeat right
+  background: url('/assets/home/background-home-mobile.jpg') no-repeat bottom
     fixed;
   background-size: cover;
+
+  @include respond-to('medium') {
+    background: url('/assets/home/background-home-tablet.jpg') no-repeat bottom
+      fixed;
+    background-size: cover;
+  }
+
+  @include respond-to('large') {
+    background: url('/assets/home/background-home-desktop.jpg') no-repeat right
+      fixed;
+    background-size: cover;
+  }
 }

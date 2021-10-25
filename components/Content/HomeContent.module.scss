@@ -1,0 +1,108 @@
+@use 'styles' as *;
+
+.Content {
+  padding-top: 112px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond-to('medium') {
+    padding-top: 202px;
+    margin: 0 165px;
+  }
+
+  @include respond-to('large') {
+    padding-top: 387px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .Intro {
+    width: 327px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include respond-to('medium') {
+      width: 450px;
+    }
+    @include respond-to('large') {
+      width: 450px;
+      text-align: left;
+    }
+
+    .Heading1 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2.7px;
+      font-weight: normal;
+      width: 100%;
+
+      @include respond-to('medium') {
+        font-size: 1.25rem;
+      }
+
+      @include respond-to('large') {
+        font-size: 1.75rem;
+        letter-spacing: 4.72px;
+      }
+    }
+    .Heading2 {
+      font-size: 5rem;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      margin: 16px 0;
+      font-family: 'Bellefair', serif;
+      text-transform: uppercase;
+      font-weight: normal;
+
+      @include respond-to('medium') {
+        font-size: 9.375rem;
+        height: 150px;
+        margin: 24px;
+      }
+    }
+    .Desc {
+      font-family: 'Barlow', sans-serif;
+      font-size: 15px;
+      line-height: 25px;
+
+      @include respond-to('medium') {
+        font-size: 1rem;
+        line-height: 28px;
+        width: 444px;
+      }
+    }
+  }
+
+  .Explore {
+    margin-top: 81px;
+    width: 150px;
+    height: 150px;
+    background: $white;
+    color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bellefair', serif;
+    letter-spacing: 1.25px;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include respond-to('medium') {
+      margin-top: 156px;
+    }
+    @include respond-to('large') {
+      margin: 0;
+      width: 274px;
+      height: 274px;
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+  }
+}

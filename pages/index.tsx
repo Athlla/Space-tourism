@@ -1,3 +1,4 @@
+import HomeContent from 'components/Content/HomeContent';
 import Navbar from 'components/Navbar/Navbar';
 
 import styles from 'styles/pages/Home.module.scss';
@@ -5,8 +6,9 @@ import styles from 'styles/pages/Home.module.scss';
 const Home = () => {
   return (
     <>
+      <Navbar />
       <main className={styles.Home}>
-        <Navbar />
+        <HomeContent />
       </main>
     </>
   );
