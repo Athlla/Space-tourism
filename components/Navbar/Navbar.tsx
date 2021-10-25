@@ -1,6 +1,10 @@
 import styles from './Navbar.module.scss';
 
-const Navbar = () => {
+interface Props {
+  active: 'Home' | 'Destination' | 'Crew' | 'Technology';
+}
+
+const Navbar = ({ active }: Props) => {
   return (
     <header className={styles.Header}>
       <div className={styles.Logo}>
@@ -17,19 +21,39 @@ const Navbar = () => {
       <span className={styles.Line}></span>
       <nav className={styles.Nav}>
         <ul className={styles.NavList}>
-          <li className={[styles.NavItem, styles.Active].join(' ')}>
+          <li
+            className={[
+              styles.NavItem,
+              active === 'Home' ? styles.Active : null,
+            ].join(' ')}
+          >
             <strong>00</strong>
             <p>HOME</p>
           </li>
-          <li className={styles.NavItem}>
+          <li
+            className={[
+              styles.NavItem,
+              active === 'Destination' ? styles.Active : null,
+            ].join(' ')}
+          >
             <strong>01</strong>
             <p>DESTINATION</p>
           </li>
-          <li className={styles.NavItem}>
+          <li
+            className={[
+              styles.NavItem,
+              active === 'Crew' ? styles.Active : null,
+            ].join(' ')}
+          >
             <strong>02</strong>
             <p>CREW</p>
           </li>
-          <li className={styles.NavItem}>
+          <li
+            className={[
+              styles.NavItem,
+              active === 'Technology' ? styles.Active : null,
+            ].join(' ')}
+          >
             <strong>03</strong>
             <p>TECHNOLOGY</p>
           </li>

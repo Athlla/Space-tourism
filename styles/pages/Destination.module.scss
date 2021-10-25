@@ -1,0 +1,20 @@
+@use 'styles' as *;
+
+.Destination {
+  min-height: 100vh;
+  background: url('/assets/destination/background-destination-mobile.jpg')
+    no-repeat center scroll;
+  background-size: cover;
+
+  @include respond-to('medium') {
+    background: url('/assets/destination/background-destination-tablet.jpg')
+      no-repeat center scroll;
+    background-size: cover;
+  }
+
+  @include respond-to('large') {
+    background: url('/assets/destination/background-destination-desktop.jpg')
+      no-repeat center scroll;
+    background-size: cover;
+  }
+}
