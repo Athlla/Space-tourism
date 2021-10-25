@@ -1,0 +1,8 @@
+@use 'styles' as *;
+
+.Home {
+  min-height: 100vh;
+  background: url('/assets/home/background-home-desktop.jpg') no-repeat right
+    fixed;
+  background-size: cover;
+}

@@ -1,5 +1,15 @@
+import Navbar from 'components/Navbar/Navbar';
+
+import styles from 'styles/pages/Home.module.scss';
+
 const Home = () => {
-  return <h1>Hello World!</h1>;
+  return (
+    <>
+      <main className={styles.Home}>
+        <Navbar />
+      </main>
+    </>
+  );
 };
 
 export default Home;
