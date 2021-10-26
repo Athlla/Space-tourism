@@ -1,6 +1,10 @@
+import { useRouter } from 'next/router';
+
 import styles from './HomeContent.module.scss';
 
 const HomeContent = () => {
+  const router = useRouter();
+
   return (
     <div className={styles.Content}>
       <div className={styles.Intro}>
@@ -13,7 +17,9 @@ const HomeContent = () => {
           experience!
         </p>
       </div>
-      <div className={styles.Explore}>Explore</div>
+      <div className={styles.Explore} onClick={() => router.push('/moon')}>
+        Explore
+      </div>
     </div>
   );
 };

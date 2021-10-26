@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import { IDestination } from 'Interfaces';
 
@@ -11,9 +12,15 @@ const DestinationContent = ({
   distance,
   travel,
 }: IDestination) => {
+  const router = useRouter();
+
+  const destinationHandler = (destination: string) => {
+    router.replace(`/${destination}`);
+  };
+
   return (
     <div className={styles.Content}>
-      <div className={styles.Title}>
+      <div className={styles.Step}>
         <span>01</span>
         <p>Pick your destination</p>
       </div>
@@ -28,6 +35,7 @@ const DestinationContent = ({
                 styles.DestItem,
                 name === 'Moon' ? styles.Active : null,
               ].join(' ')}
+              onClick={() => destinationHandler('moon')}
             >
               Moon
             </li>
@@ -36,6 +44,7 @@ const DestinationContent = ({
                 styles.DestItem,
                 name === 'Mars' ? styles.Active : null,
               ].join(' ')}
+              onClick={() => destinationHandler('mars')}
             >
               Mars
             </li>
@@ -44,6 +53,7 @@ const DestinationContent = ({
                 styles.DestItem,
                 name === 'Europa' ? styles.Active : null,
               ].join(' ')}
+              onClick={() => destinationHandler('europa')}
             >
               Europa
             </li>
@@ -52,6 +62,7 @@ const DestinationContent = ({
                 styles.DestItem,
                 name === 'Titan' ? styles.Active : null,
               ].join(' ')}
+              onClick={() => destinationHandler('titan')}
             >
               Titan
             </li>

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styles from './Navbar.module.scss';
 
 interface Props {
@@ -21,42 +23,58 @@ const Navbar = ({ active }: Props) => {
       <span className={styles.Line}></span>
       <nav className={styles.Nav}>
         <ul className={styles.NavList}>
-          <li
-            className={[
-              styles.NavItem,
-              active === 'Home' ? styles.Active : null,
-            ].join(' ')}
-          >
-            <strong>00</strong>
-            <p>HOME</p>
-          </li>
-          <li
-            className={[
-              styles.NavItem,
-              active === 'Destination' ? styles.Active : null,
-            ].join(' ')}
-          >
-            <strong>01</strong>
-            <p>DESTINATION</p>
-          </li>
-          <li
-            className={[
-              styles.NavItem,
-              active === 'Crew' ? styles.Active : null,
-            ].join(' ')}
-          >
-            <strong>02</strong>
-            <p>CREW</p>
-          </li>
-          <li
-            className={[
-              styles.NavItem,
-              active === 'Technology' ? styles.Active : null,
-            ].join(' ')}
-          >
-            <strong>03</strong>
-            <p>TECHNOLOGY</p>
-          </li>
+          <Link href="/">
+            <a>
+              <li
+                className={[
+                  styles.NavItem,
+                  active === 'Home' ? styles.Active : null,
+                ].join(' ')}
+              >
+                <strong>00</strong>
+                <p>HOME</p>
+              </li>
+            </a>
+          </Link>
+          <Link href="/moon">
+            <a>
+              <li
+                className={[
+                  styles.NavItem,
+                  active === 'Destination' ? styles.Active : null,
+                ].join(' ')}
+              >
+                <strong>01</strong>
+                <p>DESTINATION</p>
+              </li>
+            </a>
+          </Link>
+          <Link href="/">
+            <a>
+              <li
+                className={[
+                  styles.NavItem,
+                  active === 'Crew' ? styles.Active : null,
+                ].join(' ')}
+              >
+                <strong>02</strong>
+                <p>CREW</p>
+              </li>
+            </a>
+          </Link>
+          <Link href="/">
+            <a>
+              <li
+                className={[
+                  styles.NavItem,
+                  active === 'Technology' ? styles.Active : null,
+                ].join(' ')}
+              >
+                <strong>03</strong>
+                <p>TECHNOLOGY</p>
+              </li>
+            </a>
+          </Link>
         </ul>
       </nav>
       <div className={styles.Menu}>
