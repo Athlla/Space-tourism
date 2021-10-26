@@ -1,12 +1,21 @@
-import Link from 'next/link';
+import Sidebar from 'components/Sidebar/Sidebar';
+
+import NavList from './NavList';
 
 import styles from './Navbar.module.scss';
+import { useState } from 'react';
 
 interface Props {
   active: 'Home' | 'Destination' | 'Crew' | 'Technology';
 }
 
 const Navbar = ({ active }: Props) => {
+  const [sideBar, setSideBar] = useState(false);
+
+  const sidebarHandler = () => {
+    setSideBar((prevState) => !prevState);
+  };
+
   return (
     <header className={styles.Header}>
       <div className={styles.Logo}>
@@ -23,67 +32,17 @@ const Navbar = ({ active }: Props) => {
       <span className={styles.Line}></span>
       <nav className={styles.Nav}>
         <ul className={styles.NavList}>
-          <Link href="/">
-            <a>
-              <li
-                className={[
-                  styles.NavItem,
-                  active === 'Home' ? styles.Active : null,
-                ].join(' ')}
-              >
-                <strong>00</strong>
-                <p>HOME</p>
-              </li>
-            </a>
-          </Link>
-          <Link href="/moon">
-            <a>
-              <li
-                className={[
-                  styles.NavItem,
-                  active === 'Destination' ? styles.Active : null,
-                ].join(' ')}
-              >
-                <strong>01</strong>
-                <p>DESTINATION</p>
-              </li>
-            </a>
-          </Link>
-          <Link href="/crew/douglas-hurley">
-            <a>
-              <li
-                className={[
-                  styles.NavItem,
-                  active === 'Crew' ? styles.Active : null,
-                ].join(' ')}
-              >
-                <strong>02</strong>
-                <p>CREW</p>
-              </li>
-            </a>
-          </Link>
-          <Link href="/">
-            <a>
-              <li
-                className={[
-                  styles.NavItem,
-                  active === 'Technology' ? styles.Active : null,
-                ].join(' ')}
-              >
-                <strong>03</strong>
-                <p>TECHNOLOGY</p>
-              </li>
-            </a>
-          </Link>
+          <NavList active={active} />
         </ul>
       </nav>
-      <div className={styles.Menu}>
+      <div className={styles.Menu} onClick={sidebarHandler}>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21">
           <g fill="#D0D6F9" fillRule="evenodd">
             <path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z" />
           </g>
         </svg>
       </div>
+      <Sidebar active={active} show={sideBar} close={sidebarHandler} />
     </header>
   );
 };

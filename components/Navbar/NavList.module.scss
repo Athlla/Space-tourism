@@ -1,0 +1,38 @@
+@use 'styles' as *;
+
+.NavItem {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  letter-spacing: 2.36px;
+  cursor: pointer;
+  height: 100%;
+  border-bottom: 3px solid transparent;
+  transition: all 300ms ease-in-out;
+  font-size: 0.875rem;
+
+  @include respond-to('large') {
+    letter-spacing: 2.7px;
+  }
+
+  span {
+    display: block;
+    color: white;
+    font-weight: bolder;
+
+    @include respond-to('medium') {
+      display: none;
+    }
+  }
+
+  p {
+    margin-left: 0.5rem;
+  }
+
+  &:hover {
+    border-color: #979797;
+  }
+}
+.Active {
+  border-bottom: 3px solid $white;
+}

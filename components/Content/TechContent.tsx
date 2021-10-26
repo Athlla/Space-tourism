@@ -6,7 +6,7 @@ import styles from './TechContent.module.scss';
 import { useState } from 'react';
 
 const TechContent = () => {
-  const [activeData, setActiveData] = useState<number>(2);
+  const [activeData, setActiveData] = useState<number>(0);
 
   const { technology } = data;
 
