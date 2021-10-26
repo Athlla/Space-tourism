@@ -49,7 +49,7 @@ const Navbar = ({ active }: Props) => {
               </li>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/crew/douglas-hurley">
             <a>
               <li
                 className={[

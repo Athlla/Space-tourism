@@ -1,0 +1,20 @@
+@use 'styles' as *;
+
+.Crew {
+  min-height: 100vh;
+  background: url('/assets/crew/background-crew-mobile.jpg') no-repeat center
+    scroll;
+  background-size: cover;
+
+  @include respond-to('medium') {
+    background: url('/assets/crew/background-crew-tablet.jpg') no-repeat center
+      scroll;
+    background-size: cover;
+  }
+
+  @include respond-to('large') {
+    background: url('/assets/crew/background-crew-desktop.jpg') no-repeat center
+      scroll;
+    background-size: cover;
+  }
+}
